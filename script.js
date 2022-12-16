@@ -7,7 +7,13 @@ const moveOn = document.getElementById("move-on");
 // questions
 const imgs = [""]; // img srcs
 const answers = [""]; // answers to each question
-let questionIndex;
+let questionIndex = 0;
+
+function question() {
+	moveOn.style.display = "none";
+	messageUI.innerText = "What is the above picture showing?"
+	img.src = answers[questionIndex];
+}
 
 function getInput() {
 	const answer = input.value;
@@ -15,10 +21,12 @@ function getInput() {
 	return answer;
 }
 
+question();
+
 input.addEventListener("keydown", (event) => {
 	if (event.key !== "Enter") return;
 	
-	const answer = getInput;
+	const answer = getInput();
 	if (answer === answers[questionIndex]) {
 		messageUI.innerText = "Correct!";
 		moveOn.style.display = "block";
@@ -27,8 +35,4 @@ input.addEventListener("keydown", (event) => {
 	else messageUI.innerText = "Wrong, try again."
 });
 
-moveOn.addEventListener("click", () => {
-	moveOn.style.display = "none";
-	messageUI.innerText = "What is the above picture showing?"
-	img.src = answers[questionIndex];
-});
+moveOn.addEventListener("click", question);
