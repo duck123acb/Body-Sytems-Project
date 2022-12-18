@@ -5,14 +5,35 @@ const messageUI = document.getElementById("message");
 const moveOn = document.getElementById("move-on");
 
 // questions
-const imgs = [""]; // img srcs
-const answers = [""]; // answers to each question
+const answers = [
+	"brain", 
+	"spinal", 
+	"Central Nervous System", 
+	"Peripheral Nervous System", 
+	"Parasympathetic", 
+	"Autonomic", 
+	"Neuron", 
+	"Sympathetic",
+	"Nasal Cavity",
+	"Larynx",
+	"Pharynx",
+	"Trachea",
+	"Oxygen",
+	"Carbon Dioxide",
+	"Diaphragm",
+	"Intercostal Muscles",
+	"Bronchioles",
+	"Alveoli",
+	"Bronchi"
+];
 let questionIndex = 0;
 
 function question() {
 	moveOn.style.display = "none";
-	messageUI.innerText = "What is the above picture showing?"
-	img.src = answers[questionIndex];
+	messageUI.innerText = "What is being shown above?"
+	img.src = `img/${answers[questionIndex].toLowerCase()}.png`;
+	img.style.width = "20vw";
+	input.focus();
 }
 
 function getInput() {
@@ -27,7 +48,7 @@ input.addEventListener("keydown", (event) => {
 	if (event.key !== "Enter") return;
 	
 	const answer = getInput();
-	if (answer === answers[questionIndex]) {
+	if (answer === answers[questionIndex].toLowerCase()) {
 		messageUI.innerText = "Correct!";
 		moveOn.style.display = "block";
 		questionIndex++;
