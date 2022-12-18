@@ -3,6 +3,7 @@ const img = document.getElementById("img");
 const input = document.getElementById("input");
 const messageUI = document.getElementById("message");
 const moveOn = document.getElementById("move-on");
+const timeUI = document.getElementById("timer");
 
 // questions
 const answers = [
@@ -27,6 +28,10 @@ const answers = [
 	"Bronchi"
 ];
 let questionIndex = 0;
+let secs = 0;
+let mins = 0;
+let hrs = 0;
+let isPlaying = false;
 
 function question() {
 	moveOn.style.display = "none";
@@ -55,5 +60,20 @@ input.addEventListener("keydown", (event) => {
 	}
 	else messageUI.innerText = "Wrong, try again."
 });
-
 moveOn.addEventListener("click", question);
+
+setInterval(() => {
+	if (!isPlaying) return;
+
+	secs++
+	if (secs >= 60) {
+		secs = 0;
+		mins++;
+	}
+	if (mins >= 60) {
+		mins = 0;
+		hrs++;
+	}
+	const time = `${hrs}:${mins}:${secs}`;
+	timeUI.innerText = time;
+}, 1000)
