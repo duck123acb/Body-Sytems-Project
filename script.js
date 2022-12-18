@@ -31,8 +31,7 @@ const answers = [
 	"Alveoli",
 	"Bronchi"
 ];
-// let questionIndex = 0;
-let questionIndex = answers.length - 1;
+let questionIndex = 0;
 let secs = 0;
 let mins = 0;
 let hrs = 0;
