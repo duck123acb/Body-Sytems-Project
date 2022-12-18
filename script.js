@@ -29,7 +29,9 @@ const answers = [
 	"Intercostal Muscles",
 	"Bronchioles",
 	"Alveoli",
-	"Bronchi"
+	"Bronchi",
+	"c",
+	"a"
 ];
 let questionIndex = 0;
 let secs = 0;
