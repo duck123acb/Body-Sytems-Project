@@ -10,6 +10,10 @@ div, body {
 	gap: 40px;
 }
 
+body {
+	height: 100vh;
+}
+
 #main > * {
 	width: 30rem;
 }

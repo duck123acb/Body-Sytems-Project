@@ -75,7 +75,7 @@ input.addEventListener("keydown", (event) => {
 });
 startGame.addEventListener("click", () => {
 	isPlaying = true;
-	startGame.style.display = "none";
+	startScreen.style.display = "none";
 	gameScreen.style.display = "block";
 	endScreen.style.display = "none";
 	question();
