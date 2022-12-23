@@ -13,8 +13,8 @@ const startGame = document.getElementById("start-game");
 const answers = [
 	"brain", 
 	"spinal", 
-	"Central Nervous System", 
 	"Peripheral Nervous System", 
+	"Central Nervous System", 
 	"Parasympathetic", 
 	"Autonomic", 
 	"Neuron", 
